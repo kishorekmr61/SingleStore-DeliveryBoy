@@ -1,0 +1,22 @@
+<resources>
+
+    <string name="app_name">Isbazaar Delivery</string>
+    <string name="my_orders">My Orders</string>
+    <string name="mobileno">Mobile No.</string>
+    <string name="Password">Password</string>
+    <string name="Login">Login</string>
+    <string name="mobileerror"> Enter Mobile No.</string>
+    <string name="Passworderror"> Enter Password</string>
+    <string name="repassord">Re-enter the password</string>
+    <string name="usererror">Incorrect Username and Password</string>
+    <string name="myorders">My Orders</string>
+    <string name="myrewards">My Rewards</string>
+    <string name="deliveredorders">Delivered Orders</string>
+    <string name="changepassword">Change Password</string>
+    <string name="myprofile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="transport_id" translatable="false">567</string>
+    <string name="firebase_path" translatable="false">locations</string>
+    <string name="errortxt">Something went wrong we are working over it.Please try after some time</string>
+    <string name="notification_text">Tracking, tap to cancel</string>
+</resources>

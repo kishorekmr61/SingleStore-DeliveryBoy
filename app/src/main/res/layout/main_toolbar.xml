@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/Red"
+    app:navigationIcon="@drawable/ic_backicon"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/imgview_logo"
+        android:layout_width="@dimen/width100"
+        android:layout_height="50dp" />
+
+
+</android.support.v7.widget.Toolbar>
+

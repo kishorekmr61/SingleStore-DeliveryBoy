@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+       <LinearLayout
+           android:layout_margin="@dimen/margin5"
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+               <LinearLayout
+                   android:orientation="vertical"
+                   android:layout_alignParentStart="true"
+                   android:layout_alignParentLeft="true"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content">
+
+               <TextView
+                   android:id="@+id/txtview_name"
+                   android:textStyle="bold"
+                   android:textColor="@color/lightblue"
+                   android:textSize="@dimen/text_16"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+
+                   <TextView
+                       android:layout_marginTop="@dimen/margin5"
+                       android:id="@+id/txtview_mobile"
+                       android:drawableLeft="@mipmap/mobileicon1"
+                       android:textColor="@color/light_black"
+                       android:gravity="center"
+                       android:textSize="@dimen/text_14"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content" />
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_alignParentRight="true"
+                   android:layout_alignParentEnd="true"
+                   android:orientation="vertical"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content">
+
+                   <TextView
+                       android:layout_gravity="right"
+                       android:id="@+id/txtview_paymenttype"
+                       android:textStyle="bold"
+                       android:background="@color/orange"
+                       android:textColor="@color/white"
+                       android:textSize="@dimen/text_14"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content" />
+
+                   <LinearLayout
+                       android:orientation="horizontal"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content">
+
+                       <TextView
+                           android:textStyle="bold"
+                           android:text="OrderId:"
+                           android:textSize="@dimen/text_14"
+                           android:textColor="@color/light_black"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content" />
+
+                       <TextView
+                           android:textColor="@color/light_black"
+                           android:id="@+id/txtview_orderid"
+                           android:textStyle="bold"
+                           android:textSize="@dimen/text_14"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content" />
+
+                   </LinearLayout>
+
+
+
+               </LinearLayout>
+
+           </RelativeLayout>
+
+
+           <TextView
+               android:layout_marginTop="@dimen/margin2"
+               android:textColor="@color/light_black"
+               android:id="@+id/txtview_address"
+               android:maxLines="2"
+               android:textStyle="bold"
+               android:gravity="center"
+               android:textSize="@dimen/text_14"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+
+<LinearLayout
+    android:layout_marginTop="@dimen/margin10"
+    android:layout_gravity="right"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/btn_delivered"
+        android:layout_gravity="center"
+        android:layout_width="@dimen/width100"
+        android:layout_height="@dimen/height35"
+        android:background="@color/green"
+        android:text="Delivered"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_14" />
+
+           <Button
+               android:layout_gravity="center"
+               android:id="@+id/btn_ideliver"
+               android:layout_width="@dimen/width100"
+               android:layout_height="@dimen/height35"
+               android:background="@color/Red"
+               android:text="Start Delivery"
+               android:textColor="@color/white"
+               android:textSize="@dimen/text_14" />
+
+</LinearLayout>
+
+           <View
+               android:background="@color/lightgrey"
+               android:layout_marginTop="@dimen/margin5"
+               android:layout_width="match_parent"
+               android:layout_height="2dp"/>
+
+       </LinearLayout>
+
+
+
+</RelativeLayout>
