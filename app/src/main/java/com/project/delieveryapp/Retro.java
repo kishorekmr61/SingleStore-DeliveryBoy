@@ -19,8 +19,8 @@ public class Retro {
                          addConverterFactory(GsonConverterFactory.create()).build();
 
                 return retrofit;*/
-//        String URL = "http://167.86.86.78/SingleStoreApi/";
-        String URL = "http://shinwariapi.fadelsoft.com/";
+        String URL = "http://167.86.86.78/SingleStoreApi/";
+//        String URL = "http://shinwariapi.fadelsoft.com/";
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(60000, TimeUnit.SECONDS)
                 .readTimeout(60000, TimeUnit.SECONDS).build();

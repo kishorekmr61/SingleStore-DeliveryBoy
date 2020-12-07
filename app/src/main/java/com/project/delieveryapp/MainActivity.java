@@ -43,9 +43,6 @@ import com.project.delieveryapp.Fragments.DeliveredOrderFragment;
 import com.project.delieveryapp.Fragments.ProfileFragment;
 import com.project.delieveryapp.Notification.NotificationActivity;
 
-import org.json.JSONException;
-
-import java.io.IOException;
 import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.List;
@@ -145,8 +142,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 try {
                     dialog.dismiss();
                     customerdetail.clear();
-                    if(response.body().size()> 0)
-                    {
+                    if (response.body().size() > 0) {
                         customerdetail.addAll(response.body());
                     }
 
@@ -187,32 +183,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                }
 
 
-            } catch( Exception e)
+                } catch (Exception e) {
+                    dialog.dismiss();
+                    Toast.makeText(MainActivity.this, getResources().getString(R.string.errortxt), Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
 
-            {
-                dialog.dismiss();
-                Toast.makeText(MainActivity.this, getResources().getString(R.string.errortxt), Toast.LENGTH_SHORT).show();
-                e.printStackTrace();
             }
 
-        }
+            @Override
+            public void onFailure(Call<List<CustomerDetail>> call, Throwable t) {
 
-        @Override
-        public void onFailure (Call < List < CustomerDetail >> call, Throwable t){
+                if (t instanceof SocketTimeoutException) {
+                    dialog.dismiss();
+                    Toast.makeText(MainActivity.this, "Request Time out. Please try again.", Toast.LENGTH_SHORT).show();
+                } else {
+                    dialog.dismiss();
+                    Toast.makeText(MainActivity.this, getResources().getString(R.string.errortxt), Toast.LENGTH_SHORT).show();
+                }
 
-            if (t instanceof SocketTimeoutException) {
-                dialog.dismiss();
-                Toast.makeText(MainActivity.this, "Request Time out. Please try again.", Toast.LENGTH_SHORT).show();
-            } else {
-                dialog.dismiss();
-                Toast.makeText(MainActivity.this, getResources().getString(R.string.errortxt), Toast.LENGTH_SHORT).show();
             }
-
-        }
-    });
+        });
 
 
-}
+    }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
@@ -367,7 +361,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void startTrackerService() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            if(customerdetail.size()>0) {
+            if (customerdetail.size() > 0) {
                 String email = customerdetail.get(0).getEmail();
                 Intent intent = new Intent(MainActivity.this, TrackerService.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -381,7 +375,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(MainActivity.this, TrackerService.class);
 
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            if(customerdetail.size()>0) {
+            if (customerdetail.size() > 0) {
                 intent.putExtra("email", customerdetail.get(0).getEmail());
                 intent.putExtra("id", customerdetail.get(0).getFirebaseID());
                 intent.putExtra("mobileno", customerdetail.get(0).getMobileNo());
